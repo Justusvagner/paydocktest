@@ -1,0 +1,120 @@
+<div class="page_container">
+  <form [formGroup]="form" class="form_container">
+    <div class="form_title">
+      <p>Please enter your payment details in below and click Pay Now!</p>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container sb">
+        <label for="amount">Amount</label>
+        <select formControlName="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="SEK">SEK</option>
+        </select>
+      </div>
+      <div class="input_container">
+        <input formControlName="amount" id="amount" type="number" required="true">
+      </div>
+    </div>
+
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="description">Description</label>
+        <span> (optional)</span>
+      </div>
+      <div class="input_container">
+        <input formControlName="description" id="description" type="text" placeholder="ie &quot; Accommodation&quot;">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="reference">Reference</label>
+      </div>
+      <div class="input_container">
+        <input formControlName="reference" id="reference" type="text" placeholder="ie &quot;Booking id&quot;" required="true">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="nameoncard">Name On Card</label>
+      </div>
+      <div class="input_container">
+        <input formControlName="nameOnCard" id="nameoncard" type="text" required="true">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="cardnumber">Card Number</label>
+      </div>
+      <div class="input_container">
+        <input appForceNum formControlName="cardNumber" id="cardnumber" type="text" maxLength="16" minlength="16" required="true">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="expsec">Expriery & Security Code</label>
+      </div>
+      <div class="input_container sb">
+        <input appExpSec formControlName="expsec" id="expsec" type="text" placeholder="mm/yyyy"  maxLength="7" minlength="7"  required="true">
+        <label for="seccvc">Security/CVC</label>
+        <input appForceNum formControlName="seccvc" id="seccvc" type="text" placeholder="CVC" maxLength="3" minlength="3" required="true">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="email">Email (for receipt)</label>
+      </div>
+      <div class="input_container">
+        <input formControlName="email" id="email" type="email">
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <label for="phone">Phone Number</label>
+      </div>
+      <div class="input_container">
+        <input formControlName="phone" id="phone" type="text">
+      </div>
+    </div>
+
+
+
+    <div class="form_field">
+      <div class="label_container">
+      </div>
+      <div class="form_warning input_container">
+        <p class="shy">
+          By clicking the "Pay Now" button you will be charged XXXX immediately. You agree that you are authorised to charge this charge for the charge charge charge.
+        </p>
+      </div>
+    </div>
+
+    <div class="form_field">
+      <div class="label_container">
+        <img class="ps_logo" style="height: 16px; margin-top: 9px" src="assets/Visa_logo.png">
+        <img class="ps_logo" src="assets/Mastercard_logo.png">
+      </div>
+      <div class="input_container">
+        <button (click)="logForm()">Pay Now</button>
+      </div>
+    </div>
+
+    <div class="footer_container">
+      <div class="footer">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Security Statement</a>
+      </div>
+    </div>
+  </form>
+  <div class="ellipsis" id="background_ellipsis1"></div>
+  <div class="ellipsis" id="background_ellipsis2"></div>
+</div>
